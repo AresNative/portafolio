@@ -34,7 +34,9 @@ https://firebase.google.com/
 
 👉 Se crea el proyecto por medio de Vite
 
-~ npm create vite@latest
+```
+npm create vite@latest
+```
 
 👉 Acceder a la direccion del proyecto
 
@@ -42,11 +44,15 @@ https://firebase.google.com/
 
 👉 Realizar deploy
 
-~ npm run dev
+```
+npm run dev
+```
 
 👉 Se realiza la instalación de firebase para la utilización del hosting
 
-~ npm i firebase --save
+```
+npm i firebase --save
+```
 
 ## Firebase - HOSTING
 
@@ -54,11 +60,13 @@ https://firebase.google.com/
 
 👉 Instalación de plugin para la gestion de PWA Vite
 
-~ npm install -D vite-plugin-pwa
+```
+ npm install -D vite-plugin-pwa
+```
 
 Se configura el archivo vite.config.ts
 
-```
+```JavaScript
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
@@ -72,11 +80,15 @@ export default defineConfig({
 
 👉 Crear build para la publicación del proyecto
 
-~ npm run build
+```
+ npm run build
+```
 
 👉 se inicia sesion en firebase en la terminarl firebase-tools
 
-~ firebase init
+```
+firebase init
+```
 
 👉 se asocia con el proyecto firebase creado para el proyecto
 
@@ -86,7 +98,9 @@ export default defineConfig({
 
 👉 Defines tu directorio público
 
-~ dist
+```
+dist
+```
 
 👉 ¿Configurar como una aplicación de una sola página
 
