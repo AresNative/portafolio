@@ -30,15 +30,25 @@ https://firebase.google.com/
 
 👉 Copia de pagina web landing page | Twitter | - demostración del manejo de estilos customs simulando el estilo de la pagina web de Twitter
 
-## Firebase - HOSTING
+## Create app
 
 👉 Se crea el proyecto por medio de Vite
 
 ~ npm create vite@latest
 
+👉 Acceder a la direccion del proyecto
+
+~ cd my-project
+
+👉 Realizar deploy
+
+~ npm run dev
+
 👉 Se realiza la instalación de firebase para la utilización del hosting
 
 ~ npm i firebase --save
+
+## Firebase - HOSTING
 
 **OPCIONAL**
 
@@ -56,7 +66,6 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig({
   plugins: [react(), VitePWA({ registerType: "autoUpdate" })],
 });
-
 ```
 
 **OPCIONAL**
