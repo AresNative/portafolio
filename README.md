@@ -30,6 +30,8 @@ https://firebase.google.com/
 
 👉 Copia de pagina web landing page | Twitter | - demostración del manejo de estilos customs simulando el estilo de la pagina web de Twitter
 
+/pages/Copy-page
+
 ## Create app
 
 👉 Se crea el proyecto por medio de Vite
