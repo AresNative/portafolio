@@ -1,0 +1,46 @@
+:root {
+    --background: #fff;
+    --background-card:#f6f6f7;
+    --border-color:#f9f9f9;
+
+    --hover:#191c1f8c;
+    --hover-input:#a9adfadd;
+    --hover-button:#646cff;
+    --hover-icon:#3c3c43;
+
+    --text-primary: #0f0f0f;
+    --text-secondary:#3c3c43;
+
+    --border: #1f1e1e;
+    --shadow: #00000048;
+    /* switsh */
+    --switch-btn-bg: #fff;
+    --switch-border-color: #3c3c434a;
+    --switch-icon-color: #0f0f0f;
+    --switch-bg-color: #f6f6f7;
+    /* switsh */
+}
+
+
+[data-theme='dark'] {
+    --background: #1e1e20;
+    --background-card: #252529;
+    --border-color: #202023;
+    
+    --hover: #ddddddab;
+    --hover-input: #646cff;
+    --hover-button: #a9adfadd;
+    --hover-icon: #fffff5db;
+
+    --text-primary: #f2f2f2;
+    --text-secondary: #a7a4a4;
+
+    --border: #696969;
+    --shadow: #ffffff1b;
+    /* switsh */
+    --switch-btn-bg: #000;
+    --switch-border-color: #525259ad;
+    --switch-icon-color: #f2f2f2;
+    --switch-bg-color: #313136;
+    /* switsh */
+}
