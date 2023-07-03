@@ -1,3 +1,18 @@
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--background-card);
+}
+::-webkit-scrollbar:hover {
+  width: 10px;
+  background-color: var(--background-card);
+}
+::-webkit-scrollbar-thumb {
+  background: #727272;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #464545;
+}
+
 .logo {
   margin: 0 auto;
   text-align: center;
@@ -7,7 +22,7 @@
 }
 
 .logo:hover {
-  filter: drop-shadow(0 0 1em #3aaff7/* ,0 0 1em #672f8d */);
+  filter: drop-shadow(0 0 1em #3aaff7);
 }
 
 .div-logo{
@@ -36,6 +51,10 @@
 /* ----------------- shitch - theme ----------------- */
 .container-switch {
   display: flex;
+  margin: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -188,7 +207,7 @@ li a {
   text-decoration: none;
 }
 li a.btn{
-  padding: 14px 15px;
+  padding: 15px 15px;
 }
 li a .fill-icon {
   margin:20px 5px;
@@ -200,7 +219,6 @@ li a .stroke-icon {
 li a:hover {
   color: var(--hover-button);
 }
-
 .menu ul a {
   text-decoration: none;
 }
@@ -223,6 +241,7 @@ li a:hover {
   flex-grow: 1;
   margin: 0;
   position: absolute;
+  margin-top: -10%;
   margin-left: 20%;  
   border-radius: 15rem;
 }
@@ -230,32 +249,142 @@ li a:hover {
   width: 8rem;
   border-radius: 15rem;
 }
-/* ----------------- text ----------------- */
-.mi{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 5rem;
+/* ----------------- avatar ----------------- */
+.img-avatar {
+  flex-grow: 1;
+  margin: 0;
+  position: absolute;
+  margin-left: 28rem;
+  margin-top: -25rem;
+  border-radius: 15rem;
 }
+
+.avatar {
+  width: 7rem;
+  height: auto;
+} 
+@media (max-width: 768px) {
+  .img-avatar {
+    margin-left: 18rem;
+    margin-top: -25rem;
+    position: absolute;
+  }
+    .avatar {
+      width: 5rem;
+      height: auto;
+    }
+}
+
+/* ----------------- text ----------------- */
 .gradient-text {
-  background-image: linear-gradient(180deg,#49ebff, #e53aff);
+  background-image: linear-gradient(180deg, #49ebff, #e53aff);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
   color: transparent;
 }
+
+.mi {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .mi {
+    height: auto;
+    padding: 1rem;
+  }
+}
+
 .card {
-  padding: 2rem;
   width: 35rem;
-  margin: 1rem;
-  margin-top: 4rem;
+  padding: 2rem;
   background-color: var(--background-card);
   border: 1px solid var(--border-color);
   box-shadow: 10px 10px 10px var(--shadow1),
     -10px -10px 10px var(--shadow2);
   border-radius: 15px;
 }
-
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+  }
+}
 .subtitle {
   color: var(--text-secondary);
+}
+
+/* --------------- TEST --------------- */
+
+.card-hobbie {
+  float: right;
+  margin: 1rem;
+  width: 35rem; 
+  height: 35rem;
+  transition: all 0.2s;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: inherit;
+  height: inherit;
+  background: rgba(255, 255, 255, .05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+}
+
+.card-hobbie:hover {
+  transform: scale(1.04) rotate(1deg);
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(#b0e633, #53ef7d);
+  border-radius: 50%;
+  position: absolute;
+  animation: move-up6 2s ease-in infinite alternate-reverse;
+}
+
+.circle:nth-child(1) {
+  top: -25px;
+  left: -25px;
+}
+
+.circle:nth-child(2) {
+  bottom: -25px;
+  right: -25px;
+  animation-name: move-down1;
+}
+
+/* --------------- Grid ------------- */
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  margin: 1rem;
+  width: 35rem;
+}
+.box-present{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Estilos adicionales para hacerlo responsive */
+@media (max-width: 480px) {
+  .box {
+    width: 100%;
+    margin: 1rem;
+  }
+  .box-present {
+    margin: 1rem;
+  }
 }

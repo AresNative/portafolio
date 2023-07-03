@@ -1,18 +1,17 @@
 function Card() {
     return (
-        <div className='card'>
-
-            <h2>Soy titulado Tecnico <div className="gradient-text">Programador</div> </h2>
+        <div className='card tecnologias'>
+            <h2>Las tecnologias que conozco en: </h2>
+            <h3 className="gradient-text">front-end</h3>
             <p className="subtitle">
-                Me considero un apasionado desarrollador <strong>front-end</strong>    <br />
-                Me gusta desarrollar en React y actualmente estoy desarrollando aplicaciones en Ionic pero también conozco
-                lenguajes como:
-                PHP y Java, sin contar otros frameworks de javascript.
+                Son mi fuerte por el momento y me desenvuelvo bien al momento de darles uso
             </p>
             <br />
             <p>
-                Tengo 4 años de experiencia creando diversos sistemas
+
             </p>
+            <br />
+
         </div>
     )
 }
