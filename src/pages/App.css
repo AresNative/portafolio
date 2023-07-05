@@ -246,7 +246,7 @@ li.icon-modal{
   opacity: 1;
 }
 .menue-no-modal{
-  opacity: 0;
+  display: none;
 }
 }
 /* ----------------- avatar ----------------- */
@@ -371,7 +371,7 @@ li.icon-modal{
 }
 @media (max-width: 480px) {
   .copy-success {
-    margin-top: -7.6%;
+    margin-top:-29px;
   }
 }
 .code-snippet:hover .copy-button {
@@ -414,6 +414,7 @@ li.icon-modal{
 
 #modal-toggle {
   opacity: 0;
+  height: 25px;
 }
 
 .hamburger svg {

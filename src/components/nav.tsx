@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Switch } from "./Switch"
 import Modal_Menu from "./modal"
 import viteLogo from '/vite.svg'
@@ -19,7 +20,7 @@ function Nav() {
                     <Modal_Menu />
                 </li>
                 <div className="menue-no-modal">
-                    <li><a className="btn" href="#">Experiencia</a></li>
+                    <li><Link className="btn" to="Experience">Experiencia</Link></li>
                     <li><a className="btn" href="#">Proyectos</a></li>
                     {/*  */}
                     <li className="end">

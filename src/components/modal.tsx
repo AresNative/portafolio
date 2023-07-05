@@ -10,8 +10,8 @@ const Modal_Menu = () => {
 
     return (
         <div>
-            <input type="checkbox" id="modal-toggle" />
-            <label className="hamburger" htmlFor="modal-toggle" onClick={toggleModal}>
+            <input type="checkbox" id="modal-toggle" onClick={toggleModal} />
+            <label className="hamburger" htmlFor="modal-toggle">
                 <svg viewBox="0 0 32 32">
                     <path
                         className="line line-top-bottom"
@@ -23,7 +23,7 @@ const Modal_Menu = () => {
             <div id="modal" className={`modal ${modalVisible ? 'show' : ''}`}>
                 <div className="modal-content">
                     <nav className='nav-content'>
-                        <a className="btn" href="#">Experiencia</a>
+                        <a className="btn" href="experience">Experiencia</a>
                         <a className="btn" href="#">Proyectos</a>
                     </nav>
                     <Switch />
