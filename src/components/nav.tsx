@@ -20,7 +20,7 @@ function Nav() {
                 </li>
                 <div className="menue-no-modal">
                     <li><a className="btn" href="#">Experiencia</a></li>
-                    <li><a className="btn" href="#">Ejemplos de trabajos</a></li>
+                    <li><a className="btn" href="#">Proyectos</a></li>
                     {/*  */}
                     <li className="end">
                         <a href="https://discordapp.com/users/809524532091158561">

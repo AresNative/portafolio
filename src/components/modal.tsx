@@ -24,7 +24,7 @@ const Modal_Menu = () => {
                 <div className="modal-content">
                     <nav className='nav-content'>
                         <a className="btn" href="#">Experiencia</a>
-                        <a className="btn" href="#">Ejemplos de trabajos</a>
+                        <a className="btn" href="#">Proyectos</a>
                     </nav>
                     <Switch />
                     <div className='modal-redes'>

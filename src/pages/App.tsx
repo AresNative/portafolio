@@ -32,11 +32,13 @@ function App() {
           <p>
             Me gusta desarrollar en React y actualmente estoy desarrollando aplicaciones hibridas (Android / iOS) en Ionic, también conozco
             lenguajes como:
-            PHP y Java, manejo bases de datos relacionales como SQL y no relacionales como firestore de Firebase sin contar otros frameworks de JavaScript como Angular.
+            PHP y Java, manejo bases de datos relacionales como SQL y no relacionales como firestore de Firebase sin contar otros frameworks
+            de JavaScript como Angular.
           </p>
           <br />
           <p>
-            Tengo 4 años de experiencia en la creacion de diversos sistemas y actualmente estoy cursando la Universidad ademas por mi cuenta estudio diversas tecnologias con Python
+            Tengo 4 años de experiencia en la creacion de diversos sistemas y actualmente estoy cursando la Universidad ademas por mi cuenta
+            estudio diversas tecnologias con Python para mejorar mis capacidades y entendimiento de los sistemas
           </p>
         </div>
       </div>
