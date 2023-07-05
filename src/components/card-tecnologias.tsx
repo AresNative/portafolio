@@ -2,7 +2,7 @@ function CardTecnologias() {
     return (
         <div className='card'>
             <h2>Tecnologias generales que conozco en: </h2>
-            <h3 className="subtitle">Front-end...</h3>
+            <h3 className="subtitle">Front-end</h3>
             <br />
             <p>
                 <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
@@ -34,7 +34,7 @@ function CardTecnologias() {
                 </a>
             </p>
             <br />
-            <h3 className="subtitle">Back-end...</h3>
+            <h3 className="subtitle">Back-end</h3>
             <br />
             <p>
                 <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">

@@ -16,13 +16,9 @@
 .logo {
   margin: 0 auto;
   text-align: center;
-  height: 2em;
+  height: 25px;
   will-change: filter;
   transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 1em #3aaff7);
 }
 
 .div-logo{
@@ -31,6 +27,7 @@
   top: 0;
   left: 0;
   right: 0;
+  margin-right: 2rem;
 }
 .div-logo p{
   cursor: pointer;
@@ -147,7 +144,6 @@
 }
 @keyframes slideAndFade {
   0% {
-    transform: translateX(1rem);
     opacity: 1;
   }
 
@@ -159,9 +155,19 @@
 .menu {
   display: flex;
   justify-content: center;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  background-color:transparent;
+  z-index: 1;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.3s ease-out;
+}
+
+.menu.with-border {
+  border-bottom-color: var(--menu-border-bg);
+  background-color: var(--background);
 }
 .hr {
   height: 28px;
@@ -171,6 +177,7 @@
 }
 .menu ul {
   width: 70%;
+  height: 4rem;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -178,10 +185,6 @@
 }
 
 @media (max-width: 768px) {
-  .menu {
-    margin: 1rem;
-  }
-
   .menu ul {
     width: 90%;
   }
@@ -196,9 +199,11 @@ li.end {
 }
 li.start{
   float: left;
-  position: fixed;
   left: 5rem;
-  height: 50px;
+}
+li.icon-modal{
+  opacity: 0;
+  padding: 15px 15px;
 }
 li a {
   display: block;
@@ -236,18 +241,13 @@ li a:hover {
 }.stroke-icon:hover{
   stroke: var(--hover-icon);
 }
-/* ----------------- avatar ----------------- */
-.img-avatar{
-  flex-grow: 1;
-  margin: 0;
-  position: absolute;
-  margin-top: -10%;
-  margin-left: 20%;  
-  border-radius: 15rem;
+@media(max-width: 1100px){
+li.icon-modal{
+  opacity: 1;
 }
-.avatar {
-  width: 8rem;
-  border-radius: 15rem;
+.menue-no-modal{
+  opacity: 0;
+}
 }
 /* ----------------- avatar ----------------- */
 .img-avatar {
@@ -262,11 +262,12 @@ li a:hover {
 .avatar {
   width: 7rem;
   height: auto;
+  border-radius: 20rem;
 } 
 @media (max-width: 768px) {
   .img-avatar {
     margin-left: 18rem;
-    margin-top: -25rem;
+    margin-top: -30rem;
     position: absolute;
   }
     .avatar {
@@ -277,7 +278,7 @@ li a:hover {
 
 /* ----------------- text ----------------- */
 .gradient-text {
-  background-image: linear-gradient(180deg, #49ebff, #e53aff);
+  background-image: linear-gradient(175deg, #49ebff, #e53aff);
   -webkit-background-clip: text;
   -moz-background-clip: text;
   background-clip: text;
@@ -290,6 +291,7 @@ li a:hover {
   align-items: center;
   height: 5rem;
   margin-bottom: 4rem;
+  margin-top: 5rem;
 }
 
 @media (max-width: 768px) {
@@ -319,49 +321,65 @@ li a:hover {
 
 /* --------------- TEST --------------- */
 
-.card-hobbie {
-  float: right;
-  margin: 1rem;
-  width: 35rem; 
-  height: 35rem;
-  transition: all 0.2s;
+.code-snippet {
+  height: 4rem;
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background-color: #161618;
+  color: var(--text-secondary);
+  padding: 8px;
+  font-family: monospace;
+  resize: vertical;
+  text-decoration: none;
   position: relative;
-  cursor: pointer;
 }
 
-.card-inner {
-  width: inherit;
-  height: inherit;
-  background: rgba(255, 255, 255, .05);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(10px);
-  border-radius: 8px;
+.code-text {
+  padding: 14px 14px;
 }
 
-.card-hobbie:hover {
-  transform: scale(1.04) rotate(1deg);
-}
-
-.circle {
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(#b0e633, #53ef7d);
-  border-radius: 50%;
+.copy-success {
   position: absolute;
-  animation: move-up6 2s ease-in infinite alternate-reverse;
+  right: 5px;
+  height: 3rem;
+  border-radius: 4px;
+  border: 1px solid #252529;
+  background: #1e1e20;
+  color: #666;
+  padding: 1rem;
+  margin-right: 90px;
+  margin-top: -30px;
 }
 
-.circle:nth-child(1) {
-  top: -25px;
-  left: -25px;
+.copy-button {
+  float: right;
+  height: 3rem;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #252529;
+  background: #1e1e20;
+  color: #666;
+  cursor: pointer;
+  margin-top: -14px;
+  transition: color 0.2s;
 }
-
-.circle:nth-child(2) {
-  bottom: -25px;
-  right: -25px;
-  animation-name: move-down1;
+.copy-button:hover{
+  color: #f2f2f2;
 }
-
+.copy-button {
+  opacity: 0;
+}
+@media (max-width: 480px) {
+  .copy-success {
+    margin-top: -7.6%;
+  }
+}
+.code-snippet:hover .copy-button {
+  opacity: 1;
+}
+.keywords-code{
+  color: #bebe29;
+}
 /* --------------- Grid ------------- */
 .parent {
   display: flex;
@@ -377,8 +395,9 @@ li a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5rem;
+  margin: 1rem;
 }
-/* Estilos adicionales para hacerlo responsive */
 @media (max-width: 480px) {
   .box {
     width: 100%;
@@ -387,4 +406,90 @@ li a:hover {
   .box-present {
     margin: 1rem;
   }
+}
+/* ------------ ToggleMenu --------------- */
+.hamburger {
+  cursor: pointer;
+}
+
+#modal-toggle {
+  opacity: 0;
+}
+
+.hamburger svg {
+  height: 25px;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: var(--switch-icon-color);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+#modal-toggle:checked+.hamburger svg {
+  transform: rotate(-45deg);
+}
+
+#modal-toggle:checked+.hamburger svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+/* ---------- Modal -------------- */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background);
+  margin-top: 50px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  color: var(--text-primary);
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  text-align: center;
+}
+.nav-content {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 13px;
+}
+
+.nav-content a {
+  text-decoration: none;
+  color: var(--text-primary);
+  padding: 10px 0;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+.modal-content a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.modal-redes svg {
+  margin-right: 5px;
 }

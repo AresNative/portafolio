@@ -1,9 +1,17 @@
 import CardTecnologias from '../components/card-tecnologias'
 import Nav from '../components/nav'
 import Avatar from '../components/avatar'
-/* import TestComponent from '../components/test' */
 import './App.css'
+import CodeSnippet from '../components/card-code'
 function App() {
+  window.addEventListener('scroll', () => {
+    const menu = document.querySelector('.menu');
+    if (window.pageYOffset > 0) {
+      menu?.classList.add('with-border');
+    } else {
+      menu?.classList.remove('with-border');
+    }
+  });
 
   return (
     <div className="container-main">
@@ -11,14 +19,14 @@ function App() {
       <h2 className='mi'>Hola! 👋 Soy Juan José y ...</h2>
       <div className="box-present">
         <Avatar
-          url='https://media.licdn.com/dms/image/D5635AQE7FORDdkyzSQ/profile-framedphoto-shrink_200_200/0/1686712320701?e=1688407200&v=beta&t=Or5U667sOoLO05TLtdidLwrY44S9skgl1VNc5q75I-4'
+          url='https://media.licdn.com/dms/image/D5635AQE7FORDdkyzSQ/profile-framedphoto-shrink_200_200/0/1686712320701?e=1689058800&v=beta&t=pqWoSAYE6Yh6WiOliQNrxGAJUc5uM2-NAE5sIPRrm0k'
           alt="test"
         />
         <div className='card'>
           <h2>Soy titulado Tecnico <div className="gradient-text">Programador</div> </h2>
           <p className="subtitle">
             Me considero un apasionado desarrollador <strong>front-end</strong>  aunque tambien conozco tecnologias back-end
-            por lo que puedo abarcar puestos full-stack sin mucha complicacion
+            por lo que puedo abarcar puestos <strong>full-stack</strong> sin mucha complicacion
           </p>
           <br />
           <p>
@@ -38,12 +46,10 @@ function App() {
           <CardTecnologias />
         </div>
         <div className="box">
-          <CardTecnologias />
-          {/* <TestComponent /> */}
+          <CodeSnippet code='npm i firebase --save' />
         </div>
         <div className="box">
           <CardTecnologias />
-          {/* <TestComponent /> */}
         </div>
       </div>
 
