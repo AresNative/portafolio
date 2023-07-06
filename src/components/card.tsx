@@ -1,19 +1,46 @@
-function Card() {
-    return (
-        <div className='card tecnologias'>
-            <h2>Las tecnologias que conozco en: </h2>
-            <h3 className="gradient-text">front-end</h3>
-            <p className="subtitle">
-                Son mi fuerte por el momento y me desenvuelvo bien al momento de darles uso
-            </p>
-            <br />
-            <p>
+import React from "react";
 
-            </p>
-            <br />
-
-        </div>
-    )
+interface CardProps {
+    title: string;
+    important: string;
+    subtitle: string;
+    text: string;
 }
 
-export default Card
+const Card: React.FC<CardProps> = ({ title, important, subtitle, text }) => {
+    function renderText() {
+        const words = text.split('.');
+        return words.map((word: any, index: any) => {
+            if (index === words.length - 1) {
+                return word;
+            }
+            return (
+                <React.Fragment key={index}>
+                    {word}
+                    <br />
+                </React.Fragment>
+            );
+        });
+    };
+    function renderSubtitle() {
+        const processedSubtitle = subtitle.replace(
+            /<strong>(.*?)<\/strong>/g,
+            "<strong>$1</strong>"
+        );
+
+        return <div dangerouslySetInnerHTML={{ __html: processedSubtitle }} />;
+    }
+
+    return (
+        <div className='card'>
+            <h2>{title} {important && (<span className="gradient-text">{important}</span>)}</h2>
+
+            <div className="subtitle">{renderSubtitle()}</div>
+            <br />
+            <p>{renderText()}</p>
+            <br />
+        </div>
+    );
+}
+
+export default Card;

@@ -5,13 +5,11 @@ import NotFound from "./NotFound";
 import './App.css'
 export default function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="Home" element={<Home />} />
-        <Route path="Experience" element={<Experience />} />
-        <Route element={<NotFound />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="Home" element={<Home />} />
+      <Route path="Experience" element={<Experience />} />
+      <Route element={<NotFound />} />
+    </Routes>
   );
 }
