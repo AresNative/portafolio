@@ -1,15 +1,14 @@
-@import url('./styles/var.css');
+@import url('./theme/var.css');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 600;
-  background-color: var(--background);
-  color: var(--text-primary);
-  transition: all .5s ease-in-out;
+    font-family:  system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    transition: all .5s ease-in-out;
 }

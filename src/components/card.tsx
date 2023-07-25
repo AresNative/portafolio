@@ -1,15 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
+import { SvgDocs } from "../assets/docs";
 
 interface CardProps {
     title: string;
     important: string;
     subtitle: string;
     text: string;
+    document?: string;
+    download?: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, important, subtitle, text }) => {
+
+const Card: React.FC<CardProps> = (props: any) => {
+
+    const { title, important, subtitle, text, document, download } = props;
+
+    const [dowloadSuccess, setDowloadSuccess] = useState(false);
     function renderText() {
-        const words = text.split('.');
+        const words = text.split('|salto de linea|');
         return words.map((word: any, index: any) => {
             if (index === words.length - 1) {
                 return word;
@@ -17,7 +25,7 @@ const Card: React.FC<CardProps> = ({ title, important, subtitle, text }) => {
             return (
                 <React.Fragment key={index}>
                     {word}
-                    <br />
+                    <br /><br />
                 </React.Fragment>
             );
         });
@@ -27,8 +35,13 @@ const Card: React.FC<CardProps> = ({ title, important, subtitle, text }) => {
             /<strong>(.*?)<\/strong>/g,
             "<strong>$1</strong>"
         );
-
         return <div dangerouslySetInnerHTML={{ __html: processedSubtitle }} />;
+    }
+    const handleMouseLeave = () => {
+        setDowloadSuccess(false);
+    };
+    function downloadFile() {
+        window.open(download, '_blank');
     }
 
     return (
@@ -38,7 +51,22 @@ const Card: React.FC<CardProps> = ({ title, important, subtitle, text }) => {
             <div className="subtitle">{renderSubtitle()}</div>
             <br />
             <p>{renderText()}</p>
-            <br />
+            {document && (
+                <>
+                    <br />
+                    <div className="code-snippet" onMouseLeave={handleMouseLeave}>
+                        <pre className='code-text'>
+                            <code typeof='javascript' >
+                                {document}
+                            </code>
+                            <button className="copy-button" onClick={downloadFile}>
+                                <SvgDocs />
+                            </button>
+                            {dowloadSuccess && <div className="copy-success">¡Copiado!</div>}
+                        </pre>
+                    </div>
+                </>
+            )}
         </div>
     );
 }

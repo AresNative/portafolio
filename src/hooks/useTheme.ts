@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 type ChangeEvent = React.ChangeEvent<HTMLInputElement>;
 
-type Theme = "dark" | "light";
+type Theme = "light" | "dark";
 
 type useThemeReturn = [string, (e: ChangeEvent) => void];
 

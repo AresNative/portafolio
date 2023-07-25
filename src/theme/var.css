@@ -1,15 +1,15 @@
 :root {
     --background: #fff;
-    --background-card:#f6f6f7;
-    --border-color:#f9f9f9;
+    --background-card: #f6f6f7;
+    --border-color: #f9f9f9;
 
-    --hover:#191c1f8c;
-    --hover-input:#a9adfadd;
-    --hover-button:#646cff;
-    --hover-icon:#3c3c43;
+    --hover: #191c1f8c;
+    --hover-input: #a9adfadd;
+    --hover-button: #646cff;
+    --hover-icon: #3c3c43;
 
     --text-primary: #0f0f0f;
-    --text-secondary:#757576;
+    --text-secondary: #757576;
 
     --border: #1f1e1e;
     --shadow: #00000048;
@@ -27,7 +27,7 @@
     --background: #1e1e20;
     --background-card: #252529;
     --border-color: #202023;
-    
+
     --hover: #ddddddab;
     --hover-input: #646cff;
     --hover-button: #a9adfadd;
