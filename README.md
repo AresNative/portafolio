@@ -50,12 +50,15 @@ npm create vite@latest
 npm run dev
 ```
 
-👉 Se realiza la instalación de firebase para la utilización del hosting
+👉 Se realiza la instalación de firebase y firebase-tools para la utilización del hosting
 
 ```
 npm i firebase --save
 ```
 
+```
+npm i -g firebase-tools
+```
 ## Firebase - HOSTING
 
 **OPCIONAL**
