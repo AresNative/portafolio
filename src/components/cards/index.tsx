@@ -11,14 +11,14 @@ interface CardProps {
     text: string;
     document?: string;
     download?: string;
-    download_uri?: string;
+    downloadUri?: string;
     code?: string;
 }
 
 
 const Card: React.FC<CardProps> = (props: any) => {
     const codeRef: any = useRef(null);
-    const { title, important, subtitle, text, document, download, download_uri, code } = props;
+    const { title, important, subtitle, text, document, download, downloadUri, code } = props;
     const [copySuccess, setCopySuccess] = useState(false);
     const handleMouseLeave = () => {
         setCopySuccess(false);
@@ -59,7 +59,7 @@ const Card: React.FC<CardProps> = (props: any) => {
                 {document && (
                     <pre className="download-snippet">
                         {document}
-                        <a className="download-button" href={download_uri} download={download}>
+                        <a className="download-button" href={downloadUri} download={download}>
                             <SvgPdf />
                         </a>
                     </pre>

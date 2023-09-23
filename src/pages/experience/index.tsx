@@ -10,7 +10,7 @@ function Experience() {
                 text="Junto a un equipo de desarrollo me encargué de adaptar y actualizar aplicaciones para dispositivos modernos."
                 document="Carta de recomendacion"
                 download="recomendacio_lennkengorup.pdf"
-                download_uri="./documents/carta_de_recomendacion_lennkengroup.pdf"
+                downloadUri="./documents/carta_de_recomendacion_lennkengroup.pdf"
             />
             <Card
                 title="Momoxpam | "
@@ -25,7 +25,7 @@ function Experience() {
                 text="Me responsabilicé por el desarrollo de módulos para el control de calidad, la generación de informes de rendimiento y errores, así como la implementación de sistemas de registro."
                 document="Carta de recomendacion"
                 download="recomendacio_factory1.pdf"
-                download_uri="./documents/carta_de_recomendacion_factory.pdf"
+                downloadUri="./documents/carta_de_recomendacion_factory.pdf"
             />
 
             <Card
