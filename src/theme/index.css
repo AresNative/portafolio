@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #e8e8e8;
+    --background-card: #FDFFFC;
+    --background-card-climate: #46596178;
+
+    --border-color: #f9f9f9;
+    --border-climate: #00000057;
+
+    --hover: #191c1f8c;
+    --hover-input: #a9adfadd;
+    --hover-button: #646cff;
+    --hover-icon: #3c3c43;
+
+    --text-primary: #0f0f0f;
+    --text-secondary: #757576;
+
+    --border: #1f1e1e;
+    --shadow: #00000048;
+    
+    --card-shadow: #bebebe;
+    --card-shadow2: #ffffff;
+    
+    --switch-btn-bg: #fff;
+    --switch-border-color: #3c3c434a;
+    --switch-icon-color: #0f0f0f;
+    --switch-bg-color: #f6f6f7;
+    
+    --menu-border-bg: #e6e6e6;
+
+    --clr1: #018E42;
+}
+
+
+[data-theme='dark'] {
+    --background: #1e1e20;
+    --background-card: #252529;
+    --background-card-climate: #4141414f;
+
+    --border-color: #202023;
+    --border-climate: #ffffff17;
+    
+    --hover: #ddddddab;
+    --hover-input: #646cff;
+    --hover-button: #a9adfadd;
+    --hover-icon: #fffff5db;
+
+    --text-primary: #f2f2f2;
+    --text-secondary: #a7a4a4;
+
+    --border: #696969;
+    --shadow: #ffffff1b;
+
+    --card-shadow: #191919;
+    --card-shadow2: #3c3c3c;
+
+    --switch-btn-bg: #000;
+    --switch-border-color: #525259ad;
+    --switch-icon-color: #f2f2f2;
+    --switch-bg-color: #313136;
+    
+    --menu-border-bg: #000;
+}
+
+body {
+    font-family: system-ui, Avenir, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    transition: all .5s ease-in-out;
+}

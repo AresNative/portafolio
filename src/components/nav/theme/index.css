@@ -1,0 +1,283 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    z-index: 3;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease-out;
+}
+
+.menu.with-border {
+    border-bottom-color: var(--menu-border-bg);
+    background-color: var(--background);
+}
+
+.hr {
+    height: 28px;
+    margin-top: 15px;
+    border: none;
+    background-color: #929292;
+}
+
+.menu ul {
+    width: 70%;
+    height: 4rem;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .menu ul {
+        width: 90%;
+    }
+}
+
+.menu li {
+    float: left;
+}
+
+li.end {
+    float: right
+}
+
+li.start {
+    float: left;
+    left: 5rem;
+}
+
+li.icon-modal {
+    display: none;
+    padding: 15px 15px;
+}
+
+li a {
+    display: block;
+    color: var(--text-primary);
+    text-align: center;
+    text-decoration: none;
+}
+
+li a.btn {
+    padding: 20px 1rem;
+}
+
+li a .fill-icon {
+    margin: 20px 5px;
+}
+
+li a .stroke-icon {
+    margin: 20px 5px;
+}
+
+li a:hover {
+    color: var(--hover-button);
+}
+
+ul a {
+    text-decoration: none;
+}
+
+.fill-icon {
+    width: 20px;
+    height: 20px;
+    fill: #9999a0;
+}
+
+li a:hover .fill-icon {
+    fill: var(--hover-icon);
+}
+
+.stroke-icon {
+    width: 20px;
+    height: 20px;
+    stroke: #9999a0;
+}
+
+.menu li a:hover .stroke-icon {
+    stroke: var(--hover-icon);
+}
+
+@media(max-width: 1100px) {
+    li.icon-modal {
+        display: block;
+    }
+
+    .menue-no-modal {
+        display: none;
+    }
+}
+
+.btn .fill-icon {
+    margin-top: 16px;
+}
+
+.hamburger {
+    cursor: pointer;
+}
+
+#modal-toggle {
+    opacity: 0;
+    height: 25px;
+}
+
+.hamburger svg {
+    height: 25px;
+    transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+    fill: none;
+    stroke: var(--switch-icon-color);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+        stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+    stroke-dasharray: 12 63;
+}
+
+#modal-toggle:checked+.hamburger svg {
+    transform: rotate(-45deg);
+}
+
+#modal-toggle:checked+.hamburger svg .line-top-bottom {
+    stroke-dasharray: 20 300;
+    stroke-dashoffset: -32.42;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    margin-top: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+}
+
+.modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    color: var(--text-primary);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    text-align: center;
+}
+
+.nav-content {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 13px;
+}
+
+.nav-content a {
+    text-decoration: none;
+    color: var(--text-primary);
+    padding: 10px 0;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-content a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.modal-redes svg {
+    margin-right: 5px;
+}
+
+/* -------------------------------------------- */
+.timeline {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 1em 0;
+    list-style-type: none;
+}
+
+.timeline:before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    content: ' ';
+    display: block;
+    width: 6px;
+    height: 100%;
+    margin-left: -3px;
+    background: #505050;
+}
+
+.timeline li {
+    padding: 1rem 0;
+}
+
+.timeline li:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.direction-l {
+    position: relative;
+    width: 300px;
+    float: left;
+    text-align: right;
+    padding-right: 1rem;
+}
+
+.direction-r {
+    position: relative;
+    width: 300px;
+    float: right;
+    padding-left: 1rem;
+}
+
+.flag-wrapper {
+    position: relative;
+    display: inline-block;
+
+    text-align: center;
+}
+
+.flag {
+    position: relative;
+    display: inline;
+    background: rgb(248, 248, 248);
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: left;
+}
+
+
+.direction-l .time-wrapper {
+    float: left;
+}
+
+.direction-r .time-wrapper {
+    float: right;
+}
