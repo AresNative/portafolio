@@ -38,9 +38,9 @@ function Nav() {
                                 <Link className="btn" to="/educacion">
                                     Educacion
                                 </Link>
-                                {/* <Link className="btn" to="/code">
-                                    Code
-                                </Link> */}
+                                <Link className="btn" to="/code">
+                                    Code👾
+                                </Link>
                             </nav>
                             <SwitchToggle />
                             <div className="modal-redes">
@@ -69,11 +69,11 @@ function Nav() {
                             Educacion
                         </Link>
                     </li>
-                    {/* <li>
+                    <li>
                         <Link className="btn" to="/code">
-                            Code
+                            Code👾
                         </Link>
-                    </li> */}
+                    </li>
                     <li className="end">
                         <a href="https://discordapp.com/users/809524532091158561" target="_blank" >
                             <SvgDiscord className="fill-icon" />

@@ -1,6 +1,6 @@
 
 import Card from '../../components/cards'
-import stryle from './index.module.css'
+import stryle from '../../theme/global-page-styles.module.css'
 function Educacion() {
     return (
         <main className={stryle.parent}>

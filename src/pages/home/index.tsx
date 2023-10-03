@@ -9,15 +9,15 @@ function Home() {
     return (
         <>
             <main className={styles.parent}>
-                <div className={styles.div1}>
+                <section className={styles.div1}>
                     <Card
                         title="Hola! 👋 Soy Juan José"
                         important=""
                         subtitle=""
                         text="<strong>Técnico Programador</strong> con experiencia en diversas áreas. <br /> <br />  Me especializo en el desarrollo <strong>front-end</strong>, aunque también conozco tecnologías <strong>back-end</strong>, lo que me permite desempeñarme en roles <strong>full-stack</strong> sin muchas complicaciones. "
                     />
-                </div>
-                <div className={styles.div2}>
+                </section>
+                <section className={styles.div2}>
                     EDAD
                     <p className={styles.number}>
                         20
@@ -25,18 +25,18 @@ function Home() {
                     <strong>
                         AÑOS
                     </strong>
-                </div>
-                <div className={styles.div3}>
+                </section>
+                <section className={styles.div3}>
                     <a href="mailto:juanerpgr@gmail.com" target="_blank">
                         <SvgMail className={styles.fill_icon} />
                     </a>
-                </div>
-                <div className={styles.div4}>
+                </section>
+                <section className={styles.div4}>
                     <p>
                         Disfruto mucho del proceso de desarrollo de nuevos proyectos, desde la concepción de la idea hasta la planificación de su ejecución.
                     </p>
-                </div>
-                <div className={styles.div5}>
+                </section>
+                <section className={styles.div5}>
                     EXPERIENCIA
                     <div className={styles.number}>
                         4
@@ -44,13 +44,13 @@ function Home() {
                     <strong>
                         AÑOS
                     </strong>
-                </div>
-                <div className={styles.div6}>
+                </section>
+                <section className={styles.div6}>
                     <a href="./documents/cve.pdf" download="cve_juan_jose_eusebio_rodriguez.pdf">
                         <SvgPdf className={styles.fill_icon} />
                     </a>
-                </div>
-                <div className={styles.div7}>
+                </section>
+                <section className={styles.div7}>
                     <h3 className={styles.subtitle}>Front-end</h3>
                     <p>
                         <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
@@ -180,11 +180,11 @@ function Home() {
                         </a>
 
                     </p>
-                </div>
-                <div className={styles.div8}>
+                </section>
+                <section className={styles.div8}>
                     <CardSpotify />
-                </div>
-                <div className={styles.div9}>
+                </section>
+                <section className={styles.div9}>
                     <h2>Mis pasatiempos</h2>
                     <p>
                         Los intereses que tengo son variados, pero lo que siempre ha perdurado en mí son los videojuegos. <br /> <br /> Si desean entablar una conversación, es fácil encontrarme en las siguientes plataformas:
@@ -196,8 +196,8 @@ function Home() {
                         <img src="img/valorant.jpg" alt="valorant" width="40" height="40" />
                     </a>
 
-                </div>
-                <div className={styles.div10}> <CardClimate /> </div>
+                </section>
+                <section className={styles.div10}> <CardClimate /> </section>
             </main>
         </>
     )

@@ -3,6 +3,8 @@ import Nav from "./components/nav";
 import Home from "./pages/home";
 import Experience from "./pages/experience";
 import Educacion from "./pages/educacion";
+import Code from "./pages/code";
+import CodeDetails from "./pages/code/details-code";
 
 function App() {
     window.addEventListener('scroll', () => {
@@ -22,10 +24,9 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/experience" element={<Experience />} />
                 <Route path="/educacion" element={<Educacion />} />
-                {/* <Route path='/test' element={<Test />} />
                 <Route path="/code/" element={<Code />} >
                     <Route path="detailsPwa" element={<CodeDetails />} />
-                </Route> */}
+                </Route>
                 <Route path='*' element={
                     <main className="parent">
                         <div>
