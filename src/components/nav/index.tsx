@@ -1,105 +1,88 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import SvgDiscord from "../../assets/discord";
-import SvgGitHub from "../../assets/github";
-import SvgLinkedin from "../../assets/linkedin";
-import SvgHamburger from "../../assets/hamburger";
-import { SwitchToggle } from "./hooks/switch-togle";
-import { Home } from "../../assets/home";
-import './theme/index.css'
-function Nav() {
-    const [modalVisible, setModalVisible] = useState(false);
+import { Menu, X, Home, Briefcase, GraduationCap, Code, BookOpen } from 'lucide-react';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
-    const toggleModal = () => {
-        setModalVisible((prevModalVisible) => !prevModalVisible);
-    };
+function Nav() {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const navItems = [
+        { path: '/', label: 'Inicio', icon: <Home className="w-5 h-5" /> },
+        { path: '/experience', label: 'Experiencia', icon: <Briefcase className="w-5 h-5" /> },
+        { path: '/educacion', label: 'Educación', icon: <GraduationCap className="w-5 h-5" /> },
+        { path: '/code', label: 'Proyectos', icon: <Code className="w-5 h-5" /> },
+        { path: '/blog', label: 'Blog', icon: <BookOpen className="w-5 h-5" /> }, // Nueva entrada
+    ];
 
     return (
-        <nav className="menu">
-            <ul>
-                <li className="start">
-                    <Link to="/">
-                        <Home className='fill-icon' />
-                    </Link>
-                </li>
-                <li className="end icon-modal">
-
-                    <input type="checkbox" id="modal-toggle" onClick={toggleModal} />
-                    <label className="hamburger" htmlFor="modal-toggle">
-                        <SvgHamburger />
-                    </label>
-
-                    <div id="modal" className={`modal ${modalVisible ? "show" : ""}`}>
-                        <div className="modal-content">
-                            <nav className="nav-content">
-                                <Link className="btn" to="/experience">
-                                    Experiencia
-                                </Link>
-                                <Link className="btn" to="/educacion">
-                                    Educacion
-                                </Link>
-                                <Link className="btn" to="/code">
-                                    Code👾
-                                </Link>
-                            </nav>
-                            <SwitchToggle />
-                            <div className="modal-redes">
-                                <a href="https://discordapp.com/users/809524532091158561" target="_blank" >
-                                    <SvgDiscord className="fill-icon" />
-                                </a>
-                                <a href="https://github.com/AresNative" target="_blank" >
-                                    <SvgGitHub className="stroke-icon" />
-                                </a>
-                                <a href="https://www.linkedin.com/in/juan-jos%C3%A9-eusebi-rodriguez-a6aaa8278/" target="_blank" >
-                                    <SvgLinkedin className="fill-icon" />
-                                </a>
+        <nav className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between items-center h-16">
+                    {/* Logo */}
+                    <div className="flex-shrink-0">
+                        <NavLink to="/" className="flex items-center gap-2">
+                            <div className="w-8 h-8 rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center">
+                                <Code className="w-5 h-5 text-white" />
                             </div>
-                        </div>
+                            <span className="text-xl font-bold text-gray-900 dark:text-white">
+                                J<span className="text-blue-600">J</span>
+                            </span>
+                        </NavLink>
                     </div>
 
-                </li>
-                <section className="menue-no-modal">
-                    <li>
-                        <Link className="btn" to="/experience">
-                            Experiencia
-                        </Link>
-                    </li>
-                    <li>
-                        <Link className="btn" to="/educacion">
-                            Educacion
-                        </Link>
-                    </li>
-                    <li>
-                        <Link className="btn" to="/code">
-                            Code👾
-                        </Link>
-                    </li>
-                    <li className="end">
-                        <a href="https://discordapp.com/users/809524532091158561" target="_blank" >
-                            <SvgDiscord className="fill-icon" />
-                        </a>
-                    </li>
-                    <li className="end">
-                        <a href="https://github.com/AresNative" target="_blank" >
-                            <SvgGitHub className="stroke-icon" />
-                        </a>
-                    </li>
-                    <li className="end">
-                        <a href="https://www.linkedin.com/in/juan-jos%C3%A9-eusebi-rodriguez-a6aaa8278/" target="_blank" >
-                            <SvgLinkedin className="fill-icon" />
-                        </a>
-                    </li>
-                    <li className="end hr">
-                        <hr />
-                    </li>
-                    <li className="end">
-                        <SwitchToggle />
-                    </li>
-                    <li className="end hr">
-                        <hr />
-                    </li>
-                </section>
-            </ul>
+                    {/* Desktop Navigation */}
+                    <div className="hidden md:flex items-center space-x-1">
+                        {navItems.map((item) => (
+                            <NavLink
+                                key={item.path}
+                                to={item.path}
+                                className={({ isActive }) =>
+                                    `flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive
+                                        ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
+                                        : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                                    }`
+                                }
+                            >
+                                {item.icon}
+                                {item.label}
+                            </NavLink>
+                        ))}
+                    </div>
+
+                    {/* Mobile menu button */}
+                    <div className="md:hidden">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
+                        >
+                            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
+                    </div>
+                </div>
+
+                {/* Mobile Navigation */}
+                {isOpen && (
+                    <div className="md:hidden">
+                        <div className="px-2 pt-2 pb-3 space-y-1">
+                            {navItems.map((item) => (
+                                <NavLink
+                                    key={item.path}
+                                    to={item.path}
+                                    onClick={() => setIsOpen(false)}
+                                    className={({ isActive }) =>
+                                        `flex items-center gap-3 px-4 py-3 rounded-lg text-base font-medium ${isActive
+                                            ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
+                                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
+                                        }`
+                                    }
+                                >
+                                    {item.icon}
+                                    {item.label}
+                                </NavLink>
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
         </nav>
     );
 }

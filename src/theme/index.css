@@ -1,75 +1,74 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos personalizados */
+@layer base {
+    :root {
+        --background: #ffffff;
+        --foreground: #171717;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --background: #0a0a0a;
+            --foreground: #ededed;
+        }
+    }
+
+    body {
+        @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+
+    /* Smooth scrolling */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Selection color */
+    ::selection {
+        @apply bg-blue-500/20 text-blue-700 dark:text-blue-300;
+    }
 }
 
-:root {
-    --background: #e8e8e8;
-    --background-card: #FDFFFC;
-    --background-card-climate: #46596178;
+@layer components {
 
-    --border-color: #f9f9f9;
-    --border-climate: #00000057;
+    /* Timeline styles for experience page */
+    .timeline-container {
+        @apply relative max-w-4xl mx-auto px-4;
+    }
 
-    --hover: #191c1f8c;
-    --hover-input: #a9adfadd;
-    --hover-button: #646cff;
-    --hover-icon: #3c3c43;
+    .timeline-container::before {
+        @apply content-[''] absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-1 bg-gray-300 dark:bg-gray-700;
+    }
 
-    --text-primary: #0f0f0f;
-    --text-secondary: #757576;
+    .timeline-item {
+        @apply relative mb-12 w-full;
+    }
 
-    --border: #1f1e1e;
-    --shadow: #00000048;
-    
-    --card-shadow: #bebebe;
-    --card-shadow2: #ffffff;
-    
-    --switch-btn-bg: #fff;
-    --switch-border-color: #3c3c434a;
-    --switch-icon-color: #0f0f0f;
-    --switch-bg-color: #f6f6f7;
-    
-    --menu-border-bg: #e6e6e6;
+    .timeline-item:nth-child(odd) {
+        @apply pl-0 pr-[calc(50%+2rem)];
+    }
 
-    --clr1: #018E42;
-}
+    .timeline-item:nth-child(even) {
+        @apply pl-[calc(50%+2rem)] pr-0;
+    }
 
+    .timeline-dot {
+        @apply absolute w-4 h-4 rounded-full border-4 border-white dark:border-gray-900 bg-blue-500 top-6;
+    }
 
-[data-theme='dark'] {
-    --background: #1e1e20;
-    --background-card: #252529;
-    --background-card-climate: #4141414f;
+    .timeline-item:nth-child(odd) .timeline-dot {
+        @apply right-[calc(2rem-0.5rem)];
+    }
 
-    --border-color: #202023;
-    --border-climate: #ffffff17;
-    
-    --hover: #ddddddab;
-    --hover-input: #646cff;
-    --hover-button: #a9adfadd;
-    --hover-icon: #fffff5db;
+    .timeline-item:nth-child(even) .timeline-dot {
+        @apply left-[calc(2rem-0.5rem)];
+    }
 
-    --text-primary: #f2f2f2;
-    --text-secondary: #a7a4a4;
-
-    --border: #696969;
-    --shadow: #ffffff1b;
-
-    --card-shadow: #191919;
-    --card-shadow2: #3c3c3c;
-
-    --switch-btn-bg: #000;
-    --switch-border-color: #525259ad;
-    --switch-icon-color: #f2f2f2;
-    --switch-bg-color: #313136;
-    
-    --menu-border-bg: #000;
-}
-
-body {
-    font-family: system-ui, Avenir, Helvetica, sans-serif;
-    background: var(--background);
-    color: var(--text-primary);
-    transition: all .5s ease-in-out;
+    .timeline-content {
+        @apply bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg border border-gray-200 dark:border-gray-700;
+    }
 }
