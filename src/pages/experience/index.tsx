@@ -191,8 +191,6 @@ function ExperienceCard({
 }
 
 function Experience() {
-    const [filter, setFilter] = useState('all');
-    const [sortBy, setSortBy] = useState('newest');
 
     return (
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-8">
