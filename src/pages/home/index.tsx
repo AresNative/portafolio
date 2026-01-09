@@ -17,7 +17,7 @@ function calculateAge(birthDate: Date): number {
 }
 
 // Función para calcular experiencia dinámica
-function calculateExperience(startDate: Date): number {
+export function calculateExperience(startDate: Date): number {
     const today = new Date();
     let years = today.getFullYear() - startDate.getFullYear();
     const monthDiff = today.getMonth() - startDate.getMonth();

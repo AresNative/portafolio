@@ -55,11 +55,11 @@ function App() {
                             </p>
                         </div>
                         <div className="flex space-x-4">
-                            <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer"
+                            <a href="https://github.com/AresNative" target="_blank" rel="noopener noreferrer"
                                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
                                 GitHub
                             </a>
-                            <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer"
+                            <a href="https://linkedin.com/in/juan-josé-eusebi-rodriguez-a6aaa8278/" target="_blank" rel="noopener noreferrer"
                                 className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400">
                                 LinkedIn
                             </a>

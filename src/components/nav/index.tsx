@@ -24,7 +24,7 @@ function Nav() {
                                 <Code className="w-5 h-5 text-white" />
                             </div>
                             <span className="text-xl font-bold text-gray-900 dark:text-white">
-                                J<span className="text-blue-600">J</span>
+                                Eusebio<span className="text-blue-600">Dev</span>
                             </span>
                         </NavLink>
                     </div>

@@ -205,7 +205,7 @@ function Educacion() {
                                     <div>
                                         <div className="flex justify-between text-sm mb-1">
                                             <span className="text-gray-600 dark:text-gray-400">Años de estudio</span>
-                                            <span className="font-semibold text-blue-600 dark:text-blue-400">7+</span>
+                                            <span className="font-semibold text-blue-600 dark:text-blue-400">5+</span>
                                         </div>
                                         <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                                             <div className="bg-blue-500 h-2 rounded-full w-5/6"></div>
@@ -272,9 +272,9 @@ function Educacion() {
                                 institution="UTEL"
                                 degree="Licenciatura en Sistemas Computacionales"
                                 subtitle="Universidad en Línea"
-                                period="2021 - Presente"
+                                period="2022 - Pausada en Julio del 2024"
                                 duration="Último año"
-                                status="in-progress"
+                                status="planned"
                                 description="Actualmente cursando el último año de mi carrera universitaria, especializándome en desarrollo de software y arquitectura de sistemas. Este programa me ha permitido combinar estudios teóricos avanzados con aplicación práctica en proyectos reales, preparándome para roles de liderazgo en tecnología."
                                 skills={[
                                     "Arquitectura de Software",
@@ -285,7 +285,7 @@ function Educacion() {
                                     "Cloud Computing"
                                 ]}
                                 highlights={[
-                                    "Promedio académico de 9.2/10",
+                                    "Promedio académico de 8.6/10",
                                     "Proyecto final: Sistema de Gestión Empresarial",
                                     "Especialización en Desarrollo Full-Stack"
                                 ]}
@@ -303,7 +303,7 @@ function Educacion() {
                                     description="Curso especializado en PHP para mejorar mis prácticas de desarrollo y optimizar mi desempeño profesional. Enfocado en buenas prácticas, seguridad y patrones de diseño modernos para aplicaciones web empresariales."
                                     certificateUrl="https://www.sololearn.com/certificates/course/en/26100861/1073/landscape/png"
                                     skills={[
-                                        "PHP 7+",
+                                        "PHP 8",
                                         "POO Avanzada",
                                         "Patrones de Diseño",
                                         "Seguridad Web",
@@ -311,8 +311,6 @@ function Educacion() {
                                     ]}
                                     highlights={[
                                         "Certificado oficial con validación internacional",
-                                        "Top 10% del curso",
-                                        "Proyecto final calificado con excelencia"
                                     ]}
                                 />
 
@@ -334,8 +332,8 @@ function Educacion() {
                                         "Algoritmos"
                                     ]}
                                     highlights={[
-                                        "Cédula Profesional: 12345678",
-                                        "Título Técnico con Mención Honorífica",
+                                        "Cédula Profesional: 17402080045201",
+                                        "Título Técnico",
                                         "Proyecto ganador en concurso estatal",
                                         "Prácticas profesionales"
                                     ]}

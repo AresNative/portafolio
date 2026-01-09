@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Download, Calendar, Code, Briefcase, ChevronDown, Award, Clock, MapPin } from "lucide-react";
+import { calculateExperience } from "../home";
 
 interface ExperienceCardProps {
     title: string;
@@ -212,11 +213,11 @@ function Experience() {
                         {/* Stats Summary */}
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                             <div className="bg-white dark:bg-gray-800 rounded-xl p-4 text-center border border-gray-200 dark:border-gray-700">
-                                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{new Date().getFullYear() - 2019}+</div>
+                                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{calculateExperience(new Date(2019, 2, 1))}+</div>
                                 <div className="text-sm text-gray-600 dark:text-gray-400">Años</div>
                             </div>
                             <div className="bg-white dark:bg-gray-800 rounded-xl p-4 text-center border border-gray-200 dark:border-gray-700">
-                                <div className="text-2xl font-bold text-green-600 dark:text-green-400">4</div>
+                                <div className="text-2xl font-bold text-green-600 dark:text-green-400">6</div>
                                 <div className="text-sm text-gray-600 dark:text-gray-400">Puestos</div>
                             </div>
                             <div className="bg-white dark:bg-gray-800 rounded-xl p-4 text-center border border-gray-200 dark:border-gray-700">
@@ -230,41 +231,6 @@ function Experience() {
                         </div>
                     </div>
 
-                    {/* Filters & Controls */}
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700">
-                        <div className="flex items-center gap-4">
-                            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Filtrar:</span>
-                            <div className="flex flex-wrap gap-2">
-                                {['all', 'full-time', 'contract', 'internship'].map((filterType) => (
-                                    <button
-                                        key={filterType}
-                                        onClick={() => setFilter(filterType)}
-                                        className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${filter === filterType
-                                            ? 'bg-blue-600 text-white'
-                                            : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-                                            }`}
-                                    >
-                                        {filterType === 'all' ? 'Todos' :
-                                            filterType === 'full-time' ? 'Tiempo Completo' :
-                                                filterType === 'contract' ? 'Contrato' : 'Prácticas'}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="flex items-center gap-4">
-                            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Ordenar:</span>
-                            <select
-                                value={sortBy}
-                                onChange={(e) => setSortBy(e.target.value)}
-                                className="px-3 py-1.5 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            >
-                                <option value="newest">Más reciente</option>
-                                <option value="oldest">Más antiguo</option>
-                                <option value="duration">Duración</option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
 
                 {/* Experience Timeline & Sidebar */}
@@ -272,6 +238,44 @@ function Experience() {
                     {/* Main Timeline */}
                     <div className="lg:w-2/3">
                         <div className="space-y-6">
+                            {/* Mercados Mejia */}
+                            <ExperienceCard
+                                title="Mercados Mejia"
+                                company=""
+                                position="Fullstack Developer"
+                                period={`Octubre 2024 – ${new Date().toLocaleDateString('es-ES', { month: 'long', year: 'numeric' })}`}
+                                duration={`${Math.floor((new Date().getTime() - new Date(2024, 9, 1).getTime()) / (1000 * 60 * 60 * 24 * 30))} meses`}
+                                location="Presencial - Valle de Guadalupe, México"
+                                type="full-time"
+                                description="Me encarge de desarrollar y mantener la plataforma web de comercio electrónico de la empresa, implementando nuevas funcionalidades y optimizando el rendimiento del sitio para mejorar la experiencia del usuario y aumentar las conversiones."
+                                technologies={["NextJs", "Ionic", "React", "TypeScript", "Tailwind CSS", "Git", "Vercel", "Firebase"]}
+                                achievements={[
+                                    "Creación de secciones nuevas desde cero",
+                                    "Implementación de nuevas tecnologías modernas",
+                                    "Secciones ajustadas para el funcionamiento en tiempo real",
+                                ]}
+                            />
+                            {/* DevClimbers */}
+                            <ExperienceCard
+                                title="DevClimbers"
+                                company=""
+                                position="Mid. Frontend/Mobile Developer"
+                                period="Octubre 2023 – Julio 2024"
+                                duration="10 meses"
+                                location="Remoto"
+                                type="full-time"
+                                description="Junto a un equipo de desarrollo nos encargamos de ralizar un sistema totalmente a medida de subastas online para un cliente en Estados Unidos. Mi rol principal fue el desarrollo de la plataforma web totalmente responsive para múltiples dispositivos."
+                                technologies={["NextJs", "JavaScript", "CSS Modules", "Git", "Azure DevOps"]}
+                                achievements={[
+                                    "Creacion de secciones nuevas desde cero",
+                                    "Implementación de mejoras de rendimiento",
+                                    "Implementacion de tecnologías modernas",
+                                    "Secciones ajustadas para el funcionamiento en tiempo real"
+                                ]}
+                                document="Recomendación del equipo"
+                                download="recomendacion_lennkengroup.pdf"
+                                downloadUri="https://www.linkedin.com/in/juan-jos%C3%A9-eusebi-rodriguez-a6aaa8278/"
+                            />
                             {/* Lennken Group */}
                             <ExperienceCard
                                 title="Lennken Group"
@@ -282,12 +286,10 @@ function Experience() {
                                 location="Remoto"
                                 type="full-time"
                                 description="Junto a un equipo de desarrollo me encargué de adaptar y actualizar aplicaciones para dispositivos modernos, implementando nuevas funcionalidades y mejorando la experiencia de usuario en múltiples plataformas móviles mediante el uso de tecnologías híbridas y nativas."
-                                technologies={["Ionic", "Cordova", "Angular", "TypeScript", "Firebase", "Git", "Azure DevOps"]}
+                                technologies={["Ionic", "Cordova", "React", "TypeScript", "Firebase", "Git", "Azure DevOps"]}
                                 achievements={[
                                     "Reducción del 40% en tiempo de carga de aplicaciones",
                                     "Implementación exitosa de 15+ nuevas funcionalidades",
-                                    "Migración de 3 aplicaciones legacy a arquitecturas modernas",
-                                    "Mentoría a 2 desarrolladores junior"
                                 ]}
                                 document="Carta de Recomendación"
                                 download="recomendacion_lennkengroup.pdf"
@@ -304,7 +306,7 @@ function Experience() {
                                 location="Remoto"
                                 type="contract"
                                 description="Desarrollé una aplicación que permitía el registro de inventario de medicamentos y facilitaba a los clientes realizar pedidos a domicilio. Lideré el desarrollo completo del frontend y coordiné la integración con APIs de backend para procesamiento de pagos y gestión de inventario."
-                                technologies={["React Native", "Redux", "Node.js", "MongoDB", "AWS", "Stripe API"]}
+                                technologies={["Ionic", "Redux", "Node.js", "Firebase"]}
                                 achievements={[
                                     "Lanzamiento de aplicación en 3 meses desde cero",
                                     "Sistema de inventario en tiempo real",
@@ -371,7 +373,6 @@ function Experience() {
                                         { skill: 'Mobile', level: 85, color: 'bg-purple-500' },
                                         { skill: 'Backend', level: 75, color: 'bg-green-500' },
                                         { skill: 'Bases de Datos', level: 80, color: 'bg-orange-500' },
-                                        { skill: 'DevOps', level: 65, color: 'bg-red-500' }
                                     ].map((item, index) => (
                                         <div key={index}>
                                             <div className="flex justify-between text-sm mb-1">
@@ -394,7 +395,7 @@ function Experience() {
                                         { year: '2019', label: 'Inicio profesional', color: 'bg-green-400' },
                                         { year: '2020', label: 'Desarrollo Web', color: 'bg-blue-400' },
                                         { year: '2021', label: 'Mobile Dev', color: 'bg-purple-400' },
-                                        { year: '2023', label: 'Liderazgo técnico', color: 'bg-orange-400' },
+                                        { year: '2023', label: 'Frontend Dev', color: 'bg-orange-400' },
                                         { year: '2024', label: 'Full-Stack', color: 'bg-red-400' }
                                     ].map((item, index) => (
                                         <div key={index} className="flex items-center gap-3">
@@ -437,11 +438,11 @@ function Experience() {
                                         <div className="text-xs text-gray-600 dark:text-gray-400">Satisfacción</div>
                                     </div>
                                     <div className="text-center p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
-                                        <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">5</div>
+                                        <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">6</div>
                                         <div className="text-xs text-gray-600 dark:text-gray-400">Equipos</div>
                                     </div>
                                     <div className="text-center p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
-                                        <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">2</div>
+                                        <div className="text-2xl font-bold text-orange-600 dark:text-orange-400">4</div>
                                         <div className="text-xs text-gray-600 dark:text-gray-400">Recomendaciones</div>
                                     </div>
                                 </div>
@@ -467,14 +468,16 @@ function Experience() {
                             { name: 'TypeScript', level: 'Intermedio', color: 'bg-blue-100 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700' },
                             { name: 'Ionic', level: 'Avanzado', color: 'bg-purple-100 dark:bg-purple-900/20 border-purple-200 dark:border-purple-700' },
                             { name: 'Node.js', level: 'Intermedio', color: 'bg-green-100 dark:bg-green-900/20 border-green-200 dark:border-green-700' },
+                            { name: 'NextJs', level: 'Intermedio', color: 'bg-gray-100 dark:bg-gray-900/20 border-gray-200 dark:border-gray-700' },
                             { name: 'Firebase', level: 'Intermedio', color: 'bg-orange-100 dark:bg-orange-900/20 border-orange-200 dark:border-orange-700' },
                             { name: 'MongoDB', level: 'Intermedio', color: 'bg-green-100 dark:bg-green-900/20 border-green-200 dark:border-green-700' },
                             { name: 'PHP', level: 'Intermedio', color: 'bg-purple-100 dark:bg-purple-900/20 border-purple-200 dark:border-purple-700' },
+                            { name: 'C#', level: 'Intermedio', color: 'bg-blue-100 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700' },
                             { name: 'Java', level: 'Intermedio', color: 'bg-red-100 dark:bg-red-900/20 border-red-200 dark:border-red-700' },
-                            { name: 'MySQL', level: 'Avanzado', color: 'bg-blue-100 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700' },
+                            { name: 'JavaScript', level: 'Intermedio', color: 'bg-yellow-100 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-700' },
+                            { name: 'SQL', level: 'Avanzado', color: 'bg-blue-100 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700' },
                             { name: 'Git', level: 'Avanzado', color: 'bg-orange-100 dark:bg-orange-900/20 border-orange-200 dark:border-orange-700' },
                             { name: 'AWS', level: 'Básico', color: 'bg-yellow-100 dark:bg-yellow-900/20 border-yellow-200 dark:border-yellow-700' },
-                            { name: 'Docker', level: 'Básico', color: 'bg-blue-100 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700' }
                         ].map((tech, index) => (
                             <div
                                 key={index}
@@ -532,7 +535,7 @@ function Experience() {
                                 <div className="absolute inset-8 rounded-full border-4 border-green-200 dark:border-green-700"></div>
                                 <div className="absolute inset-0 flex items-center justify-center">
                                     <div className="text-center">
-                                        <div className="text-3xl font-bold text-gray-900 dark:text-white">+5</div>
+                                        <div className="text-3xl font-bold text-gray-900 dark:text-white">+{calculateExperience(new Date(2019, 2, 1))}</div>
                                         <div className="text-gray-600 dark:text-gray-400">Años de crecimiento</div>
                                     </div>
                                 </div>
