@@ -54,7 +54,7 @@ function Home() {
                                 <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                                     <div className="w-48 h-48 rounded-3xl overflow-hidden border-4 border-white/20 shadow-xl flex-shrink-0">
                                         <img
-                                            src="https://media.licdn.com/dms/image/v2/D5603AQGGzqcueOlodQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1686712320092?e=1769644800&v=beta&t=YRxuWeKeQ2N8nD4reYi7vTM5QFsGj_7q3mZE6rayofY"
+                                            src="perfil.jpg"
                                             alt="Juan José"
                                             className="w-full h-full object-cover"
                                         />
