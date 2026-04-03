@@ -31,7 +31,7 @@ function Blog() {
 
     // Datos de ejemplo para el blog
     const blogPosts: BlogPost[] = [
-        {
+        /* {
             id: 1,
             title: "Introducción a React 18 y sus nuevas características",
             excerpt: "Exploramos las novedades de React 18, incluyendo concurrent features, automatic batching y el nuevo root API.",
@@ -45,82 +45,7 @@ function Blog() {
             likes: 42,
             views: 150,
             comments: 8
-        },
-        {
-            id: 2,
-            title: "TypeScript: Mejores prácticas para proyectos escalables",
-            excerpt: "Guía completa de mejores prácticas y patrones para mantener código TypeScript limpio y escalable.",
-            content: "Contenido completo del artículo...",
-            author: "Juan José",
-            date: "2024-01-10",
-            readTime: "12 min",
-            tags: ["TypeScript", "Buenas prácticas", "Arquitectura"],
-            category: "backend",
-            imageUrl: "https://images.unsplash.com/photo-1516116216624-53e697fedbea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            likes: 28,
-            views: 98,
-            comments: 5
-        },
-        {
-            id: 3,
-            title: "Desarrollo de PWAs con Ionic y React",
-            excerpt: "Cómo crear Progressive Web Apps modernas utilizando Ionic Framework y React para experiencias nativas.",
-            content: "Contenido completo del artículo...",
-            author: "Juan José",
-            date: "2023-12-20",
-            readTime: "10 min",
-            tags: ["PWA", "Ionic", "Mobile", "React"],
-            category: "mobile",
-            imageUrl: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            likes: 35,
-            views: 120,
-            comments: 12
-        },
-        {
-            id: 4,
-            title: "Optimización de rendimiento en aplicaciones React",
-            excerpt: "Técnicas avanzadas para mejorar el rendimiento de aplicaciones React, memoización y lazy loading.",
-            content: "Contenido completo del artículo...",
-            author: "Juan José",
-            date: "2023-12-05",
-            readTime: "15 min",
-            tags: ["React", "Performance", "Optimización"],
-            category: "frontend",
-            imageUrl: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            likes: 50,
-            views: 200,
-            comments: 15
-        },
-        {
-            id: 5,
-            title: "Implementación de autenticación con Firebase",
-            excerpt: "Guía paso a paso para implementar un sistema seguro de autenticación usando Firebase Auth.",
-            content: "Contenido completo del artículo...",
-            author: "Juan José",
-            date: "2023-11-28",
-            readTime: "7 min",
-            tags: ["Firebase", "Auth", "Security", "Backend"],
-            category: "backend",
-            imageUrl: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            likes: 31,
-            views: 110,
-            comments: 7
-        },
-        {
-            id: 6,
-            title: "Tailwind CSS vs CSS tradicional: ¿Cuándo usar cada uno?",
-            excerpt: "Análisis comparativo entre Tailwind CSS y CSS tradicional para ayudarte a tomar la mejor decisión.",
-            content: "Contenido completo del artículo...",
-            author: "Juan José",
-            date: "2023-11-15",
-            readTime: "9 min",
-            tags: ["Tailwind", "CSS", "Frontend", "Design"],
-            category: "frontend",
-            imageUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            likes: 45,
-            views: 180,
-            comments: 11
-        }
+        }, */
     ];
 
     const categories: BlogCategory[] = [
